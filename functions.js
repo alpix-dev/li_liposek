@@ -116,8 +116,8 @@ ls.testimonials = [
 
 
 function assets(file){
-    //return "https://cdn.jsdelivr.net/gh/alpix-dev/li_liposek/assets/" + file;
-    return "http://127.0.0.1:5500/assets/" + file;
+    return "https://cdn.jsdelivr.net/gh/alpix-dev/li_liposek/assets/" + file;
+    //return "http://127.0.0.1:5500/assets/" + file;
 }
 
 function asset_picture(file){
