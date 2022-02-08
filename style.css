@@ -104,6 +104,7 @@ a{
     color:#111;
     margin:7.5px 0;
     display:inline-block;
+    white-space: nowrap;
 }
 #cabecalho{
     position:absolute;
@@ -157,7 +158,8 @@ a{
     gap: 45px;
     margin:0
 }
-#theme_header-functions > li:not(:last-child) > a{
+#theme_header-functions > li:nth-child(1) > a,
+#theme_header-functions > li:nth-child(2) > a{
     font-size:var(--24px);
     text-transform: lowercase;
     color: #474747;

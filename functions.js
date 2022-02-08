@@ -161,7 +161,7 @@ ls.elements.footer_newsletter = $('<div></div>').append($('#barraNewsletter').cl
 $('#rodape').html('<div class="conteiner"><div class="row-flex"><div class="col-1"></div><div class="col-2"></div><div class="col-3"></div><div class="col-4"></div></div></div>');
 $('#rodape .col-1').append('<img src="'+ assets('logo_footer.png') +'"/>');
 $('#rodape .col-1').append('<div class="ls_social">'+ ls.elements.header_social + '</div>');
-$('#rodape .col-1').append('<div class="ls_info"><p>Todo o conteúdo do site, todas as fotos, imagens, logotipos, marcas, layout, aqui veículados são de propriedade exclusiva da LIPOSEK LTDA.</p><p>Rua Vereador Jacob Turcati, 245 - Jd. São Marcos - Valinhos/SP - CEP: 13/272-823<br>CNPJ: 44.178.792/0001-64</p></div>');
+$('#rodape .col-1').append('<div class="ls_info"><p>Todo o conteúdo do site, todas as fotos, imagens, logotipos, marcas, layout, aqui veículados são de propriedade exclusiva da LIPOSEK LTDA.</p><p>Rua José de Oliveira, 68 - Vale Verde - CEP: 13279-014 - Valinhos/SP - CEP: 13/272-823<br>CNPJ: 44.178.792/0001-64</p></div>');
 $('#rodape .col-2').append('<h4>Acesso Rápido</h4>');
 $('#rodape .col-2').append('<div class="ls_pages">'+ ls.elements.footer_pages + '</div>');
 $('#rodape .col-3').append('<h4>Formas de Pagamento</h4>');
@@ -171,6 +171,8 @@ $('#rodape .col-3').append('<p>De segunda à sexta-feira das<br>8h as 18h</p>');
 $('#rodape .col-3').append('<a class="ls_whatsapp" href="'+ ls.elements.header_whatsapp +'" target="_blank">Falar no whatsapp</a>');
 $('#rodape .col-4').append('<img src="'+ assets('seals.png') +'"/>');
 
+$('.ls_pages > ul').prepend('<li><a href="/conta/pedido/listar">Meus pedidos</a></li>');
+$('.ls_pages > ul').prepend('<li><a href="/conta/index">Minha conta</a></li>');
 //build header
 $('#cabecalho').html('<div id="theme_header_1"><div class="conteiner"><div class="row-flex align-items-center"><div class="col" id="theme_header-logo"></div><div class="col-auto justify-content-center" id="theme_header-menu"></div><div class="col"><ul id="theme_header-functions"></ul></div></div></div></div>');
 $('#theme_header-logo').append(ls.elements.header_logo);
@@ -178,7 +180,7 @@ $('#theme_header-logo').append(ls.elements.header_logo);
 
 $('body:not(.pagina-carrinho) #theme_header-functions').append('<li>' + ls.elements.header_cart + '</li>');
 $('#theme_header-functions').prepend('<li><a class="" href="/conta/index">Minha conta</a></li>');
-$('#theme_header-functions').prepend('<li><a class="atendimento-l" href="/#contato">Atendimento</a></li>');
+$('#theme_header-functions').prepend('<li><a class="atendimento-l" href="#modalContato">Atendimento</a></li>');
 $('.carrinho > a >.icon-shopping-cart').before('<svg width="46" height="45" viewBox="0 0 46 45" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_274_728)"><path d="M23.0188 -0.000732422C18.8838 -0.000732422 15.4803 3.09909 15.1561 7.03189H12.6503C10.3727 7.03189 8.69983 8.76135 8.35325 11.1064L3.97617 40.7228C3.63187 43.0525 5.85091 45.0006 8.27884 45.0006H37.7251C40.1717 45.0006 42.3674 43.0521 42.0236 40.7228L37.6521 11.1064C37.3182 8.84373 35.698 7.03189 33.3537 7.03189H30.8802C30.5559 3.09911 27.1539 -0.000732422 23.0188 -0.000732422V-0.000732422ZM23.0188 1.40553C26.3839 1.40553 29.1308 3.86965 29.4483 7.03189H16.5936C16.9106 3.86965 19.6537 1.4055 23.0188 1.40553ZM12.6503 8.43951H33.3537C35.0732 8.43951 36.0201 9.88106 36.2301 11.3042L40.6015 40.9261C40.8188 42.3984 39.2657 43.593 37.7251 43.593H8.27884C6.74292 43.593 5.18543 42.4061 5.40384 40.9261L9.7753 11.3042C10.0057 9.74257 11.0282 8.43951 12.6503 8.43951V8.43951ZM29.4806 14.0604C29.4806 17.5114 26.5985 20.3048 23.0188 20.3048C19.4391 20.3048 16.5613 17.5115 16.5613 14.0604C16.5613 13.1251 15.1238 13.12 15.1238 14.0604C15.1238 18.2799 18.6708 21.711 23.0188 21.711C27.3669 21.711 30.9139 18.2798 30.9139 14.0604C30.9139 13.1251 29.4806 13.1251 29.4806 14.0604V14.0604Z" fill="#FF007A"/></g><defs><clipPath id="clip0_274_728"><rect width="46" height="45" fill="white"/></clipPath></defs></svg>');
 $('.carrinho .icon-shopping-cart').remove();
 $('.barra-inicial').remove();  
