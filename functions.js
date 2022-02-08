@@ -116,8 +116,8 @@ ls.testimonials = [
 
 
 function assets(file){
-    return "https://cdn.jsdelivr.net/gh/alpix-dev/li_liposek/assets/" + file;
-    //return "http://127.0.0.1:5500/assets/" + file;
+    //return "https://cdn.jsdelivr.net/gh/alpix-dev/li_liposek/assets/" + file;
+    return "http://127.0.0.1:5500/assets/" + file;
 }
 
 function asset_picture(file){
@@ -172,12 +172,13 @@ $('#rodape .col-3').append('<a class="ls_whatsapp" href="'+ ls.elements.header_w
 $('#rodape .col-4').append('<img src="'+ assets('seals.png') +'"/>');
 
 //build header
-$('#cabecalho').html('<div id="theme_header_1"><div class="conteiner"><div class="row-flex align-items-center"><div class="col" id="theme_header-logo"><button type="button" id="theme_header-menu-trigger" class="aside-trigger" data-toggle="menu"></button></div><div class="col-auto justify-content-center" id="theme_header-menu"></div><div class="col"><ul id="theme_header-functions"></ul></div></div></div></div>');
+$('#cabecalho').html('<div id="theme_header_1"><div class="conteiner"><div class="row-flex align-items-center"><div class="col" id="theme_header-logo"></div><div class="col-auto justify-content-center" id="theme_header-menu"></div><div class="col"><ul id="theme_header-functions"></ul></div></div></div></div>');
 $('#theme_header-logo').append(ls.elements.header_logo);
 //$('#theme_header-menu').html(ls.elements.header_menu);
-$('#theme_header-functions').append('<li>' + ls.elements.header_cart + '</li>');
+
+$('body:not(.pagina-carrinho) #theme_header-functions').append('<li>' + ls.elements.header_cart + '</li>');
 $('#theme_header-functions').prepend('<li><a class="" href="/conta/index">Minha conta</a></li>');
-$('#theme_header-functions').prepend('<li><a class="" href="#contato">Atendimento</a></li>');
+$('#theme_header-functions').prepend('<li><a class="atendimento-l" href="/#contato">Atendimento</a></li>');
 $('.carrinho > a >.icon-shopping-cart').before('<svg width="46" height="45" viewBox="0 0 46 45" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_274_728)"><path d="M23.0188 -0.000732422C18.8838 -0.000732422 15.4803 3.09909 15.1561 7.03189H12.6503C10.3727 7.03189 8.69983 8.76135 8.35325 11.1064L3.97617 40.7228C3.63187 43.0525 5.85091 45.0006 8.27884 45.0006H37.7251C40.1717 45.0006 42.3674 43.0521 42.0236 40.7228L37.6521 11.1064C37.3182 8.84373 35.698 7.03189 33.3537 7.03189H30.8802C30.5559 3.09911 27.1539 -0.000732422 23.0188 -0.000732422V-0.000732422ZM23.0188 1.40553C26.3839 1.40553 29.1308 3.86965 29.4483 7.03189H16.5936C16.9106 3.86965 19.6537 1.4055 23.0188 1.40553ZM12.6503 8.43951H33.3537C35.0732 8.43951 36.0201 9.88106 36.2301 11.3042L40.6015 40.9261C40.8188 42.3984 39.2657 43.593 37.7251 43.593H8.27884C6.74292 43.593 5.18543 42.4061 5.40384 40.9261L9.7753 11.3042C10.0057 9.74257 11.0282 8.43951 12.6503 8.43951V8.43951ZM29.4806 14.0604C29.4806 17.5114 26.5985 20.3048 23.0188 20.3048C19.4391 20.3048 16.5613 17.5115 16.5613 14.0604C16.5613 13.1251 15.1238 13.12 15.1238 14.0604C15.1238 18.2799 18.6708 21.711 23.0188 21.711C27.3669 21.711 30.9139 18.2798 30.9139 14.0604C30.9139 13.1251 29.4806 13.1251 29.4806 14.0604V14.0604Z" fill="#FF007A"/></g><defs><clipPath id="clip0_274_728"><rect width="46" height="45" fill="white"/></clipPath></defs></svg>');
 $('.carrinho .icon-shopping-cart').remove();
 $('.barra-inicial').remove();  
@@ -270,7 +271,7 @@ if($('.pagina-inicial').length > 0){
         box.append('<div class="text_1">'+ product.title +'</div>');
         box.append('<div class="text_2">'+ product.subtitle +'</div>');
         box.append('<div class="text_3">'+ product.description +'</div>');
-        box.append('<ul class="list_1"><li>'+ product.list.join('</li><li>') +'</li></ul>');
+        box.append('<button type="button" class="list-toggle" onclick="$(this).next(\'ul\').toggleClass(\'visible\');"><svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.01339 7.81628L14.8328 0.977942C15.0561 0.753892 15.0557 0.39115 14.8317 0.167475C14.6076 -0.0560263 14.2447 -0.0554487 14.0212 0.16863L7.60765 6.59993L1.19415 0.168399C0.970649 -0.0556508 0.607936 -0.0562283 0.383857 0.167244C0.271529 0.27937 0.215364 0.426264 0.215364 0.573157C0.215364 0.719674 0.271153 0.86599 0.382702 0.977914L7.20195 7.81628C7.30931 7.92419 7.45542 7.98475 7.60765 7.98475C7.75989 7.98475 7.90583 7.92402 8.01339 7.81628Z" fill="#A7A7A7"/></svg></button><ul class="list_1"><li>'+ product.list.join('</li><li>') +'</li></ul>');
         box.append('<a class="buy" href="/carrinho/produto/'+ product.id +'/adicionar">Compre agora</a>');
 
         let col = $('<div class="col"/>').append(box);
@@ -321,7 +322,7 @@ if($('.pagina-categoria, .pagina-produto, .pagina-busca').length > 0){
 
 $(document).ready(function(){
     $("a").on('click', function(event) {
-    if (this.hash !== "") {
+    if (this.hash !== "" && !$(this).hasClass('atendimento-l')) {
         event.preventDefault();
         var hash = this.hash;
         $('html, body').animate({
